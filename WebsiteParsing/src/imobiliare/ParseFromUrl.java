@@ -18,7 +18,7 @@ import interfata.Interfata;
  *         todo: - find image - show it in ui
  */
 public class ParseFromUrl {
-	public static void main(String[] args) throws MalformedURLException {
+	public static void main(String[] args) throws IOException {
 		
 			String url = 
 					"https://www.imobiliare.ro/vanzare-apartamente/timisoara/complex-studentesc/apartament-de-vanzare-2-camere-X7630002C?lista=27555241";
@@ -26,7 +26,7 @@ public class ParseFromUrl {
 			System.out.println(extracted);
 			
 			Interfata inte = new Interfata();
-			inte.init();
+			inte.initialize(extracted.getImage());
 			
 	}
 }

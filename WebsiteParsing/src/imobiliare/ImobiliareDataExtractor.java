@@ -31,7 +31,10 @@ public class ImobiliareDataExtractor {
 		process();
 
 	}
-
+	
+	public String getImage() {
+		return imageUrls.get(2);
+	}
 	private void process() {
 		try {
 			URL imo = new URL(url);

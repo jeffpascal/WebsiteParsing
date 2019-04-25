@@ -1,9 +1,13 @@
 package interfata;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Frame;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,10 +17,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
 public class Interfata extends JFrame {
-	public void init() {
+	public void initialize(String image) throws IOException {
 		 //Creating the Frame
         JFrame frame = new JFrame("Chat Frame");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +35,14 @@ public class Interfata extends JFrame {
         JMenuItem m22 = new JMenuItem("Save as");
         m1.add(m11);
         m1.add(m22);
-
+        
+        JPanel detail = new JPanel();
+        URL url = new URL(image);
+        System.out.println(image);
+        BufferedImage imagee = ImageIO.read(url);
+        JLabel label1 = new JLabel(new ImageIcon(image));
+        detail.add(label1);
+        
         //Creating the panel at bottom and adding components
         JPanel panel = new JPanel(); // the panel is not visible in output
         JLabel label = new JLabel("Enter Text");
@@ -51,7 +61,7 @@ public class Interfata extends JFrame {
         //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, mb);
-        frame.getContentPane().add(BorderLayout.CENTER, ta);
+        frame.getContentPane().add(BorderLayout.CENTER, label1);
         frame.setVisible(true);
 	}
 
