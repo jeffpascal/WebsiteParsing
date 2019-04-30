@@ -38,9 +38,9 @@ public class Interfata extends JFrame {
         
         JPanel detail = new JPanel();
         URL url = new URL(image);
-        System.out.println(image);
-        BufferedImage imagee = ImageIO.read(url);
-        JLabel label1 = new JLabel(new ImageIcon(image));
+        
+        BufferedImage imageBuffered = ImageIO.read(url);
+        JLabel label1 = new JLabel(new ImageIcon(imageBuffered));
         detail.add(label1);
         
         //Creating the panel at bottom and adding components
