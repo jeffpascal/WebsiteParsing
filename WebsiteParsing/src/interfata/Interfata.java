@@ -55,9 +55,6 @@ public class Interfata extends JFrame {
         panel.add(send);
         panel.add(reset);
 
-        // Text Area at the Center
-        JTextArea ta = new JTextArea();
-
         //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, mb);
